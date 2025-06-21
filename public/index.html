@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Classifier</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>AI Document Classifier</h1>
+        <p>Upload or paste a customer support document to classify it</p>
+        
+        <div class="input-section">
+            <textarea id="documentText" placeholder="Paste your document text here..." rows="6"></textarea>
+            <button id="classifyBtn">Classify Document</button>
+        </div>
+        
+        <div id="results" class="results-section" style="display: none;">
+            <h3>Classification Results</h3>
+            <div id="resultContent"></div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
