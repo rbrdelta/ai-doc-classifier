@@ -80,26 +80,28 @@ document.addEventListener('DOMContentLoaded', function() {
     
     console.log('Form found:', form);
     console.log('Textarea found:', textarea);
-    console.log('About to attach form listener...');
-
-    form.addEventListener('submit', async function(e) {
-        e.preventDefault();
-        
-        const text = textarea.value.trim();
-        
-        if (!text) {
-            showError('Please enter some document text to classify');
-            return;
-        }
-        
-        if (text.length > 10000) {
-            showError('Document too long. Please limit to 10,000 characters.');
-            return;
-        }
-        
-        await classifyDocument(text);
-    });
     
+    if (form) {
+        form.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const text = textarea.value.trim();
+            
+            if (!text) {
+                showError('Please enter some document text to classify');
+                return;
+            }
+            
+            if (text.length > 10000) {
+                showError('Document too long. Please limit to 10,000 characters.');
+                return;
+            }
+            
+            await classifyDocument(text);
+        });
+    }
+});
+
     // Update character counter
     textarea.addEventListener('input', function() {
         const charCount = this.value.length;
