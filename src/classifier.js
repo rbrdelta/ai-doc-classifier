@@ -5,6 +5,11 @@ const anthropic = new Anthropic({
     apiKey: process.env.ANTHROPIC_API_KEY,
 });
 
+// Add these debug lines:
+console.log('🔑 API Key exists:', !!process.env.ANTHROPIC_API_KEY);
+console.log('🔑 API Key length:', process.env.ANTHROPIC_API_KEY?.length);
+console.log('🔑 API Key starts with:', process.env.ANTHROPIC_API_KEY?.substring(0, 10));
+
 // Our classification categories
 const CATEGORIES = [
     'Billing & Payments',
