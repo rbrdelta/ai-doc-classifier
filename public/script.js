@@ -76,7 +76,7 @@ function showError(message) {
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('classifier-form');
     const textarea = document.getElementById('document-text');
-    const button = document.querySelector('.classify-btn');
+    const button = document.getElementById('classifyBtn');
     
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
