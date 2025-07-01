@@ -74,15 +74,14 @@ function showError(message) {
 
 // Handle form submission
 document.addEventListener('DOMContentLoaded', function() {
-    const form = document.getElementById('classifier-form');
-    const textarea = document.getElementById('document-text');
-    const button = document.getElementById('classifyBtn');
+    const textarea = document.getElementById('documentText'); // Match HTML
+    const button = document.getElementById('classifyBtn');     
     
-    console.log('Form found:', form);
     console.log('Textarea found:', textarea);
+    console.log('Button found:', button);
     
-    if (form) {
-        form.addEventListener('submit', async function(e) {
+    if (button && textarea) {
+        button.addEventListener('click', async function(e) {
             e.preventDefault();
             
             const text = textarea.value.trim();
@@ -101,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Move character counter inside DOMContentLoaded
+    // Keep character counter - just fix the ID
     if (textarea) {
         textarea.addEventListener('input', function() {
             const charCount = this.value.length;
@@ -122,7 +121,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-}); // Only ONE closing brace here
+});
 
 // Analytics functionality
 let analyticsVisible = false;
