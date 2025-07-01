@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const textarea = document.getElementById('document-text');
     const button = document.getElementById('classifyBtn');
     
+    if (!button) console.log('Button not found, but form submission will handle classification');
+
     form.addEventListener('submit', async function(e) {
         e.preventDefault();
         
