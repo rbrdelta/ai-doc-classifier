@@ -52,3 +52,79 @@ button:hover {
     background: #f8f9fa;
     border-radius: 6px;
 }
+
+.analytics-grid {
+    margin: 20px 0;
+}
+
+.metric-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.metric-card h3 {
+    margin: 0 0 15px 0;
+    color: #374151;
+    font-size: 16px;
+}
+
+.metric {
+    display: flex;
+    justify-content: space-between;
+    margin: 8px 0;
+    padding: 5px 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.metric-label {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.metric-value {
+    font-weight: 600;
+    color: #111827;
+}
+
+.confidence-bar {
+    display: grid;
+    grid-template-columns: 1fr 2fr auto;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+    font-size: 14px;
+}
+
+.bar-container {
+    background: #f3f4f6;
+    border-radius: 4px;
+    height: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.confidence-bar-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.recent-item {
+    padding: 8px 0;
+    border-bottom: 1px solid #f3f4f6;
+    font-size: 12px;
+}
+
+.recent-item:last-child {
+    border-bottom: none;
+}
+
+.category-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 4px 0;
+    font-size: 14px;
+}
