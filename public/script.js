@@ -100,24 +100,29 @@ document.addEventListener('DOMContentLoaded', function() {
             await classifyDocument(text);
         });
     }
-});
 
-    // Update character counter
-    textarea.addEventListener('input', function() {
-        const charCount = this.value.length;
-        const counter = document.querySelector('.char-counter');
-        if (counter) {
-            counter.textContent = `${charCount}/10,000 characters`;
-            
-            if (charCount > 10000) {
-                counter.style.color = '#ef4444';
-            } else {
-                counter.style.color = '#6b7280';
+    // Move character counter inside DOMContentLoaded
+    if (textarea) {
+        textarea.addEventListener('input', function() {
+            const charCount = this.value.length;
+            const counter = document.querySelector('.char-counter');
+            if (counter) {
+                counter.textContent = `${charCount}/10,000 characters`;
+                
+                if (charCount > 10000) {
+                    counter.style.color = '#ef4444';
+                } else {
+                    counter.style.color = '#6b7280';
+                }
             }
-        }
-        
-        resultsDiv.style.display = 'none';
-    });
+            
+            const resultsDiv = document.getElementById('results');
+            if (resultsDiv) {
+                resultsDiv.style.display = 'none';
+            }
+        });
+    }
+}); // Only ONE closing brace here
 
 // Analytics functionality
 let analyticsVisible = false;
