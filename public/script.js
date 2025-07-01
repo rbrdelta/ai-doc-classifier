@@ -118,7 +118,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         resultsDiv.style.display = 'none';
     });
-});
 
 // Analytics functionality
 let analyticsVisible = false;
